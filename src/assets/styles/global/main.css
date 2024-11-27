@@ -1,0 +1,43 @@
+/* @import 'react-select/dist/react-select.css'; */
+
+:root{
+  --section-first-width:17%;
+  --section-second-width:81%;
+  --screen-wrapper-flex-direction: row;
+  --section-first-height: 100%;
+  --section-second-height: 100%;
+}
+html{
+  overflow-y:scroll;
+  overflow-x: hidden;
+}
+body{
+  margin: 0;
+}
+.screen-wrapper{
+  display: flex;
+  flex-direction: var(--screen-wrapper-flex-direction);
+  width: 100%;
+  font-family: "Inter", sans-serif;
+}
+.screen-section-first{
+  height: var(--section-first-height);
+  width: var(--section-first-width);
+}
+.screen-section-second{
+  height: var(--section-second-height);
+  padding: 15px;
+  background-color: #F5F5F5;
+  width: var(--section-second-width);
+}
+
+@media only screen and (max-width: 768px) {
+  .screen-section-first{
+    width: 7%;
+  }
+
+  .screen-section-second{
+    padding: 10px;
+    width: 93%;
+  }
+}

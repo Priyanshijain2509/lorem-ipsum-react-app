@@ -1,0 +1,168 @@
+@import '../global/global.css'; 
+.navbar-container {
+  display: flex;
+  flex-direction: row;
+  background-color: var(--white-background-color);
+  height: 100vh;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+  box-sizing: border-box;
+}
+
+.navbar-section-1{
+  width: 10%;
+  background-color: #007bff;
+}
+
+.navbar-section-2{
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 0 0.3rem;
+}
+
+.hamburg-icon{
+  display: none;
+}
+
+.navbar-header{
+  height: 6%;
+  padding:  1rem;
+}
+
+.navbar-main{
+  height: 88%;
+}
+
+.navbar-footer {
+  height: 6%;
+  bottom: 0;
+}
+
+.navbar-heading {
+  padding: 0.8rem;
+  font-size: var(--heading-font-size);
+  font-weight: var(--heading-font-weight);
+}
+
+.navbar-links {
+  display: flex;
+  gap: 2%;
+  flex-direction: column;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-item {
+  list-style: none;
+  padding: 4%;
+}
+.navbar-link > span {
+  padding-left: 5%;
+  font-size: var(--font-size);
+  color: var(--font-color);
+  font-weight: 500;
+}
+
+.navbar-link {
+  text-decoration: none;
+}
+
+.navbar-item.active{
+  background: #007bff;
+  /* border-radius: 0.5rem; */
+
+  > .navbar-link > span{
+    color: #fff;
+  }
+  >svg {
+    fill: #fff;
+  }
+}
+
+.hover-element:hover {
+  background-color: var(--hover-background-color);
+  border-radius: 0.5rem;
+  /* font-size: 26px; */
+}
+
+.navbar-profile-button {
+  border: none;
+  padding: 2%;
+}
+
+.navbar-profile-button:hover {
+  background-color: var(--hover-background-color);
+}
+
+.navbar-item {
+  position: relative;
+}
+
+.profile-dropdown {
+  position: absolute;
+  left: 20%;
+  bottom: 100%;
+  min-width: 100%;
+  background-color: #ffffff;
+  border: 1px solid #e5e5e5;
+  border-radius: 4px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+  list-style: none;
+  padding: 8px 0;
+  z-index: 1000;
+}
+
+.profile-dropdown li {
+  margin: 0;
+  padding: 0;
+}
+
+.profile-dropdown-link {
+  display: block;
+  padding: 8px 16px;
+  color: #333333;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.profile-dropdown-link:hover {
+  background-color: #f5f5f5;
+}
+
+.navbar-footer-links {
+  padding: 0;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .navbar-link > span {
+    display: none;
+  }
+
+  .navbar-links{
+    padding: 0;
+    margin: 0;
+  }
+
+  .navbar-item{
+    display: flex;
+    justify-content: center;
+  }
+  .hamburg-icon {
+    display: inline;
+    padding: 0.4rem;
+  }
+
+  .navbar-heading {
+    display: none;
+  }
+
+  .navbar-footer {
+    display: flex;
+    justify-content: center;
+  }
+  
+}

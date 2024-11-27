@@ -1,0 +1,70 @@
+@import "../global/input.css";
+@import "../global/global.css";
+
+.form-container {
+  width: 100vw;
+  height: 100vh;
+  box-sizing: border-box;
+  padding: 1rem;
+  font-family: 'Inter', sans-serif;
+  background-color: #f0f0f0;
+}
+
+.form {
+  width: 50%;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 1rem 2rem;
+  border: 2px solid var(--blue-color);
+  border-radius: 0.5rem;
+  background-color: #fff;
+  overflow-y: scroll;
+}
+
+.form::-webkit-scrollbar {
+  display: none;
+}
+
+.form-header {
+  padding: 0;
+  margin-bottom: 1rem;
+}
+
+.form-content {
+  width: 100%;
+}
+
+.form-group {
+  width: 80%;
+  margin-bottom: 1.5rem;
+}
+.form-heading {
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 0;
+  padding: 0.7rem;
+}
+
+.form-subheading {
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin: 0;
+  padding: 0.7rem;
+}
+
+.submit-button {
+  background-color: #007bff;
+  padding: 1rem 1.5rem;
+  color: var(--white-background-color);
+  font-size: 1rem;
+  font-weight: 550;
+  border-radius: 1rem;
+  border: 0.2rem solid #b2d3f7;
+}
+
+.submit-button:hover {
+  background-color: #57a8ff;
+  border: 0.2rem solid #007bff;
+}
+/* 007bff */
+
