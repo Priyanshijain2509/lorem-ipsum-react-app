@@ -29,7 +29,7 @@ const Input = ({
   ...props
 }) => {
   const [customOption, setCustomOption] = useState('');
-
+  const [fileName, setFileName] = useState('No file chosen...');
   const handleCustomOptionChange = (e) => {
     setCustomOption(e.target.value);
   };
@@ -38,6 +38,16 @@ const Input = ({
     if (customOption.trim()) {
       onChange([...value, customOption]);
       setCustomOption('');
+    }
+  };
+
+  const handleFileChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      setFileName(file.name);
+      onChange(file);
+    } else {
+      setFileName('No file chosen...');
     }
   };
 
@@ -63,7 +73,7 @@ const Input = ({
           <input
             id={`${name}-date`}
             name={name}
-            type="date"
+            type="datetime-local"
             value={value.date || ''}
             onChange={(e) => onChange({ ...value, date: e.target.value })}
             required={required}
@@ -265,6 +275,8 @@ const Input = ({
             onChange={onChange}
             required={required}
             className={`input ${className}`}
+            min={min}
+            max={max}
             {...props}
           />
         );
@@ -285,16 +297,20 @@ const Input = ({
 
       case 'file':
         return (
-          <input
-            id={name}
-            name={name}
-            type="file"
-            value={value}
-            onChange={onChange}
-            required={required}
-            className={`input ${className}`}
-            {...props}
-          />
+          <div className="file-upload">
+            <div className="file-select">
+              <div className="file-select-button">Choose File</div>
+              <div className="file-select-name">{fileName}</div>
+              <input
+                type="file"
+                name={name}
+                id="chooseFile"
+                onChange={handleFileChange} // Handle file selection
+                className={`input ${className}`}
+                {...props}
+              />
+            </div>
+          </div>
         );
 
       case 'email':
@@ -371,7 +387,7 @@ const Input = ({
   };
 
   return (
-    <div className="form-group center-col-x">
+    <div className="form-group">
       {type !== 'checkbox' && label && (
         <label htmlFor={name} className="label">
           {label}
