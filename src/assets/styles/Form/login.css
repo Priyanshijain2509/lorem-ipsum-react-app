@@ -1,0 +1,173 @@
+@import '../Form/form.css';
+@import '../global/input.css';
+@import '../global/global.css';
+
+.login-sideBar {
+  width: 50%;
+}
+
+.login-mainSection {
+  width: 50%;
+}
+
+.login-image > img {
+  width: 100%;
+  height: 90%;
+}
+
+.login-fields {
+  padding: 1rem;
+  margin: 1rem;
+}
+
+.login-heading {
+  position: relative;
+  margin: 0;
+  padding: 0.8rem;
+  width: 100%;
+  left: 10%;
+}
+
+.login-button, .continue-button {
+  padding: 0.8rem;
+  padding-left: 25%;
+  padding-right: 25%;
+  background-color: #007bff;
+  color: #fff;
+  font-size: 1.2rem;
+  margin: 1.5rem;
+  border: none;
+  border-radius: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.login-forgetPassword {
+  width: 100%;
+  position: relative;
+  width: 80%;
+  display: flex;
+  justify-content: flex-end;
+  margin: 0 1rem;
+  text-decoration: none;
+  color: #666;
+}
+
+.error-message-text{
+  font-size:12px;
+}
+
+.password-container {
+  width: 100%;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 2s ease-in-out, opacity 2s ease-in-out;
+}
+
+.password-container.slide-down {
+  max-height: 300px; 
+  opacity: 1;
+}
+
+.login-mobile-img {
+  width: 100%;
+  height: 80%;
+  display: none;
+}
+
+.mobile-signin-view{
+  width: 80%;
+}
+
+.mobile-signin-button{
+  width: 100%
+}
+.signin-no-acc-msg{
+  font-size: 0.8rem;
+}
+
+@media screen and (min-width: 768px) and (max-width: 980px) {
+  .login-image > img{
+    height: 60%;
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 981px) and (max-width: 1281px) {
+  .login-image > img{
+    height: 70%;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .login-sideBar{
+    display: none;
+  }
+
+  .login-heading{
+    display: none;
+  }
+  .login-mobile-img {
+    width: 75%;
+    height: 55%;
+    display: block;
+    background-color: #007bff;
+  }
+
+  .login-mainSection{
+    width: 100%;
+
+  }
+  .mobile-signin-button{
+    height: 25%;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .mobile-signin-view{
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    background-color: #007bff;
+    height: 75%;
+    padding: 3% 4%;
+    /* border-bottom-right-radius: 10%; */
+    border-bottom-left-radius: 10%;
+    border-top-right-radius: 10%;
+  }
+  .login-forgetPassword{
+    font-size: 0.8rem;
+    color: #fff !important;
+  }
+
+  .continue-button{
+    height: fit-content;
+    margin: 0.5rem;
+  }
+  .login-button{
+    margin: 0.5rem;
+
+  }
+  .login-fields{
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-evenly;
+    height: 100%;
+  }
+
+  .form-group{
+    margin: 0.75rem;
+  }
+
+  .mobile-sign-input{
+    padding: 0.45rem !important;
+  }
+
+  .sign-label{
+    color: #fff !important;
+    font-size: 1rem !important;
+  }
+}

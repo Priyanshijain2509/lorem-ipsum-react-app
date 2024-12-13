@@ -389,7 +389,7 @@ const Input = ({
   return (
     <div className="form-group">
       {type !== 'checkbox' && label && (
-        <label htmlFor={name} className="label">
+        <label htmlFor={name} className="label sign-label">
           {label}
           {required && <span className="label-required">*</span>}
         </label>

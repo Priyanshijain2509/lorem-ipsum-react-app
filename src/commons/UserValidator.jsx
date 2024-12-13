@@ -1,12 +1,11 @@
-class Validator {
+class UserValidator {
     constructor() {
       this.errors = {};
     }
   
     validate(fields) {
-      this.errors = {}; // Reset errors before validation
+      this.errors = {};
       fields.forEach(({ id, value }) => {
-        // Determine which validation method to call based on the field ID
         switch (id) {
           case 'email':
             this.validateEmail(value, id);
@@ -32,10 +31,7 @@ class Validator {
     }
 
     validatePassword(password, id) {
-      // Regular expression for validating a password
       const passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
-  
-      // Test the password against the regex pattern
       if (!password || !passwordPattern.test(password)) {
         this.errors[id] = 'Password must be at least 8 characters long, with at least one uppercase letter, one lowercase letter, one number, and one special character.';
       }
@@ -67,5 +63,5 @@ class Validator {
     }
   }
   
-  export default Validator;
+  export default UserValidator;
   

@@ -10,3 +10,6 @@ export const Settings = lazy(() => import('../screens/Setting.jsx'));
 export const Supports = lazy(() => import('../screens/Support.jsx'));
 export const Unhandled = lazy(() => import('../screens/Unhandled'));
 export const Landing = lazy(() => import('../screens/Landing.jsx'));
+export const SignUpPage = lazy(() => import('../screens/SignUpPage'));
+export const SignInPage = lazy(() => import('../screens/SignInPage'));
+export const ForgetPassword = lazy(() => import('../screens/ForgetPasswordPage.jsx'));

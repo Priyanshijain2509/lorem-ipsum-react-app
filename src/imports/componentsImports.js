@@ -14,3 +14,7 @@ export const LandingBodyFirstSection = lazy(() => import('../components/Landing/
 export const LandingBodySecondSection = lazy(() => import('../components/Landing/LandingBodySecondSection'));
 export const LandingBodyThirdSection = lazy(() => import('../components/Landing/LandingBodyThirdSection'));
 export const LandingBodyFourthSection = lazy(() => import('../components/Landing/LandingBodyFourthSection'));
+export const Input = lazy (() => import('../commons/Input'));
+export const Form = lazy (() => import('../components/Form/Form'));
+export const SignUp = lazy(() => import('../components/Form/SignUp'));
+export const SignIn = lazy(() => import('../components/Form/SignIn'));

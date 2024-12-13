@@ -136,6 +136,8 @@ input[type="radio"] {
 
 @media (max-width: 768px) {
   .form {
-    width: 80%;
+    width: 90%;
+    height: 90%;
+    padding: 0;
   }
 }
