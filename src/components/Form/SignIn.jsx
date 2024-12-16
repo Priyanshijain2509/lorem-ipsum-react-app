@@ -114,7 +114,7 @@ export default function SignIn() {
             {isEmailValid && (
               <button className='login-button'>Login</button>
             )}
-            <span className="signin-no-acc-msg">
+            <span className="no-acc-msg">
               Don't have an account? <Link to='/'><span>Sign up</span></Link>
             </span>
           </div>

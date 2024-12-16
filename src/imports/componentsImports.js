@@ -18,3 +18,4 @@ export const Input = lazy (() => import('../commons/Input'));
 export const Form = lazy (() => import('../components/Form/Form'));
 export const SignUp = lazy(() => import('../components/Form/SignUp'));
 export const SignIn = lazy(() => import('../components/Form/SignIn'));
+export const ForgotPassword = lazy(() => import('../components/Form/ForgotPassword'));

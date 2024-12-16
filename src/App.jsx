@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import {RecoilRoot} from 'recoil';
 import './assets/styles/global/main.css';
 import { MainLayoutRoutes, LandingRoutes } from "./imports/import";
-import { SignInPage, SignUpPage, ForgetPassword } from "./imports/screensImports";
+import { SignInPage, SignUpPage, ForgotPasswordPage } from "./imports/screensImports";
 
 function App() {
   return (
@@ -14,7 +14,7 @@ function App() {
           <Route path="/landing/*" element={<LandingRoutes />} />
           <Route path="/signup" element= {<SignUpPage />} />
           <Route path='/signin' element= {<SignInPage />} />
-          <Route path='/forgot-password' element= {<ForgetPassword />} />
+          <Route path='/forgot-password' element= {<ForgotPasswordPage />} />
           </Routes>
       </Router>
     </RecoilRoot>

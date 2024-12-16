@@ -12,4 +12,4 @@ export const Unhandled = lazy(() => import('../screens/Unhandled'));
 export const Landing = lazy(() => import('../screens/Landing.jsx'));
 export const SignUpPage = lazy(() => import('../screens/SignUpPage'));
 export const SignInPage = lazy(() => import('../screens/SignInPage'));
-export const ForgetPassword = lazy(() => import('../screens/ForgetPasswordPage.jsx'));
+export const ForgotPasswordPage = lazy(() => import('../screens/ForgotPasswordPage.jsx'));

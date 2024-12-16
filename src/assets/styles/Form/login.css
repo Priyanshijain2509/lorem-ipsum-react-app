@@ -82,7 +82,7 @@
 .mobile-signin-button{
   width: 100%
 }
-.signin-no-acc-msg{
+.no-acc-msg{
   font-size: 0.8rem;
 }
 
@@ -133,9 +133,9 @@
     background-color: #007bff;
     height: 75%;
     padding: 3% 4%;
-    /* border-bottom-right-radius: 10%; */
+    /* border-bottom-right-radius: 30%; */
     border-bottom-left-radius: 10%;
-    border-top-right-radius: 10%;
+    /* border-top-right-radius: 10%; */
   }
   .login-forgetPassword{
     font-size: 0.8rem;

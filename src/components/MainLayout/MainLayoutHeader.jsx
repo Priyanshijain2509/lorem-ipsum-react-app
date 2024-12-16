@@ -13,7 +13,7 @@ export default function MainLayoutHeader() {
       case "Pricing":
         return <div>Here are the pricing details...</div>;
       case "Support":
-        return <div>Support content goes here...</div>;
+        return <div>Support content...</div>;
       default:
         return <div>Select an option</div>;
     }
