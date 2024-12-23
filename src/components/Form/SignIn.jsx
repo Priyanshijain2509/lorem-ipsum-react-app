@@ -2,25 +2,10 @@ import React, { useState, useEffect } from "react";
 import '../../assets/styles/Form/login.css';
 import '../../assets/styles/Form/form.css';
 import { Input } from "../../imports/componentsImports";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import UserValidator from "../../commons/UserValidator";
+import toast from "react-hot-toast";
 
-const checkIfEmailExists = async (email) => {
-  try {
-    const response = await fetch('/api/v1/check-email', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ email })
-    });
-    const data = await response.json();
-    return data.exists;
-  } catch (error) {
-    console.error("Error checking email:", error);
-    return false;
-  }
-};
 
 export default function SignIn() {
   const [emailError, setEmailError] = useState(false);
@@ -30,11 +15,60 @@ export default function SignIn() {
     email: '',
     password: ''
   });
+  const checkIfEmailExists = (email) => {
+    fetch(`${import.meta.env.VITE_BACKEND_URL}/user/find_user?email_address=${email}`, {
+      method: 'GET',
+      headers: new Headers({
+        "ngrok-skip-browser-warning": "69420",
+      }),
+
+    })
+    .then(response => response.json())
+    .then(data => {
+      console.log(data);
+      if (data.success) {
+        setEncryptedId(data.response.data);
+        return true;
+      }
+      else {
+        return false;
+      }
+    })
+  };
+  const [encryptedId, setEncryptedId] = useState('');
+  const navigate = useNavigate();
 
   const handleInputChange = (name, value) => {
     setFormData((prev) => ({ ...prev, [name]: value }));
-    if (name === 'email' && formData.email.length >= 5) validateEmail(value);
+    if (name === 'email' && value.length >= 5) validateEmail(value);
   };
+
+  const formatData = (formData) => {
+    const formattedData = new FormData();
+    formattedData.append('user[encrypted_id]', encryptedId);
+    formattedData.append('user[password]', formData.password);
+    return formattedData;
+  }
+
+  const handleLogin = () => {
+    const formattedData = formatData(formData);
+    fetch(`${import.meta.env.VITE_BACKEND_URL}/session`, {
+      method: 'POST',
+      body: formattedData
+    })
+    .then(response => response.json())
+    .then(data => {
+      console.log(data);
+      if (data.success) {
+        localStorage.setItem("token", data.data.token);
+        toast.success('Login Successful');
+        navigate('/');
+      }
+      else {
+        toast.error(data.message);
+      }
+    })
+  }
 
   const validateEmail = async (email) => {
     const validator = new UserValidator();
@@ -112,7 +146,7 @@ export default function SignIn() {
               <button className='continue-button'>Continue</button>
             )}
             {isEmailValid && (
-              <button className='login-button'>Login</button>
+              <button className='login-button' onClick={handleLogin}>Login</button>
             )}
             <span className="no-acc-msg">
               Don't have an account? <Link to='/'><span>Sign up</span></Link>

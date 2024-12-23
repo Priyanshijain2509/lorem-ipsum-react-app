@@ -21,7 +21,6 @@ export default function MainLayoutHeader() {
 
   return (
     <div className="main-layout-header center-row-y">
-      <div className="main-layout-heading">Lorem Ipsum</div>
       <div  className="main-layout-icon" onClick={toggleModal}>
         <SettingIcon />
       </div>

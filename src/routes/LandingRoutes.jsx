@@ -6,7 +6,7 @@ export default function LandingRoutes() {
   return (
     <div className='screen-wrapper'>
       <Routes>
-        <Route path="/" element={<Landing />}/>
+        <Route path="/" element={<Landing />} />
         <Route path="*" element={<UnhandledRoutes />} />
       </Routes>
     </div>

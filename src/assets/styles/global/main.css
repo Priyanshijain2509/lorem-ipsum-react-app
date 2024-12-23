@@ -2,7 +2,7 @@
 
 :root{
   --section-first-width:17%;
-  --section-second-width:81%;
+  --section-second-width:83%;
   --screen-wrapper-flex-direction: row;
   --section-first-height: 100%;
   --section-second-height: 100%;
@@ -26,7 +26,6 @@ body{
 }
 .screen-section-second{
   height: var(--section-second-height);
-  padding: 15px;
   background-color: #F5F5F5;
   width: var(--section-second-width);
 }

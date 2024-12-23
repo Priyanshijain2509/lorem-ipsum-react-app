@@ -19,3 +19,6 @@ export const Form = lazy (() => import('../components/Form/Form'));
 export const SignUp = lazy(() => import('../components/Form/SignUp'));
 export const SignIn = lazy(() => import('../components/Form/SignIn'));
 export const ForgotPassword = lazy(() => import('../components/Form/ForgotPassword'));
+export const MainLayoutBodyFirstSection = lazy(() => import('../components/MainLayout/MainLayoutBodyFirstSection'));
+export const MainLayoutBodySecondSection = lazy(() => import('../components/MainLayout/MainLayoutBodySecondSection'));
+export const MainLayoutBodyThirdSection = lazy(() => import('../components/MainLayout/MainLayoutBodyThirdSection'));

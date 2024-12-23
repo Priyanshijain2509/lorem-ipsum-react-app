@@ -1,9 +1,37 @@
-import React from "react";
+import React, { useState } from "react";
 import '../../assets/styles/Form/forgotPassword.css';
 import { Input } from "../../imports/componentsImports";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
 
 export default function  ForgotPassword(){
+  const [formData, setFormData] = useState({
+    email: '',
+    password: ''
+  });
+
+  const handleInputChange = (name, value) => {
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  }
+
+  const handleForgotPassword = () => {
+    fetch (`https://53cd-122-176-50-90.ngrok-free.app/password/forgot_password?email_address=${formData.email}`, {
+      method: 'GET',
+      headers: new Headers({
+        "ngrok-skip-browser-warning": "69420",
+      }),
+    })
+    .then(response => response.json())
+    .then(data => {
+      console.log(data);
+      if(data.success){
+        toast.success(data.response.message);
+      } else {
+        toast.error(data.message);
+      }
+    })
+  }
+
   return(
     <div className="forgot-form-mobile-view center-x-y">
       <div className="forgot-sideBar center-col-x">
@@ -21,15 +49,15 @@ export default function  ForgotPassword(){
               label="Email"
               name="email"
               type="email"
-              // value={formData.email}
-              // onChange={(e) => handleInputChange('email', e.target.value)}
+              value={formData.email}
+              onChange={(e) => handleInputChange('email', e.target.value)}
               placeholder="Enter your email"
               required
               className="mobile-forgot-input"
             />
           </div>
           <div className="forget-mobile-view-button center-col-x">
-            <button className='continue-button'>Continue</button>
+            <button className='continue-button' onClick={handleForgotPassword}>Continue</button>
             <span className="no-acc-msg">
               Don't have an account? <Link to='/'><span>Sign up</span></Link>
             </span>
