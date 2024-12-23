@@ -15,7 +15,7 @@ export default function  ForgotPassword(){
   }
 
   const handleForgotPassword = () => {
-    fetch (`https://53cd-122-176-50-90.ngrok-free.app/password/forgot_password?email_address=${formData.email}`, {
+    fetch (`${import.meta.env.VITE_BACKEND_URL}/password/forgot_password?email_address=${formData.email}`, {
       method: 'GET',
       headers: new Headers({
         "ngrok-skip-browser-warning": "69420",
